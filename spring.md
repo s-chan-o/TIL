@@ -36,3 +36,20 @@
 - 클라이언트가 서버로 전송하는 Http 요청의 Body의 내용을 JavaObject로 변환시켜주는 어노테이션이다.
 - name 과 age 의 속성을 갖는 Star 클래스에 getter 가 구현되어 있다면 Start 객체를 자동으로 생성이 가능하다.
 #### Response Body
+- Response Body 어노테이션은 Spring Framework에서 사용되는 어노테이션 중 하나로, 웹 애플리케이션에서 컨트롤러 메소드가 반환하는 값을 HTTP 응답의 본문 (body)으로 전송하기 위해 사용한다.
+## JDBC, datasource
+#### JDBC
+- JDBC는 자바에서 데이터베이스에 접속할 수 있는 API 이다.
+- Spring JDBC는 Spring Framework에서 제공하는 JDBC모듈이다.
+#### datasource
+- DB 연결 정보를 저장하고, Connection을 생성하고, Connection Pool에 등록하고 관리하는 역할 이다.
+## Spring URL, Handler Mapping
+#### Spring URL
+- URL 주소는 사용자가 서버에 접속해서 서비스를 받기 위해 입력하는 주소이다
+#### Handler Mapping
+- Handler Mapping은 클라이언트의 요청을 처리할 핸들러를 결정하는 역할을 한다.
+- 웹 애플리케이션은 다양한 요청을 받게 되는데, Handler Mapping은 이러한 요청에 대해 어떤 핸들러가 처리해야하는지를 결정한다.
+## Spring Data Jpa
+#### Spring Data Jpa
+-  Hibernate 와 JPA 를 기반으로한 데이터 엑세스 기술을 보다 간편하게 사용할 수 있도록 지원하는 Spring Framework 의 프로젝트 중 하나이다.
+- JPA : JPA는 자바 진영에서 ORM(Object-Relational Mapping) 기술 표준으로 사용되는 인터페이스의 모음이다.
