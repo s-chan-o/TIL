@@ -31,3 +31,8 @@
 #### Entity
 - Entity 클래스는 실제 DataBase의 테이블과 1 : 1로 매핑 되는 클래스로, DB의 테이블내에 존재하는 컬럼만을 속성(필드)으로 가져야 한다.
 - Entity 클래스는 상속을 받거나 구현체여서는 안되며, 테이블내에 존재하지 않는 컬럼을 가져서도 안된다.
+## Requeset Body, Response Body
+#### Requeset Body
+- 클라이언트가 서버로 전송하는 Http 요청의 Body의 내용을 JavaObject로 변환시켜주는 어노테이션이다.
+- name 과 age 의 속성을 갖는 Star 클래스에 getter 가 구현되어 있다면 Start 객체를 자동으로 생성이 가능하다.
+#### Response Body
