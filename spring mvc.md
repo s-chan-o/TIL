@@ -93,16 +93,16 @@
 
 > 주요 어노테이션
 
-- @Repository
+- @Repository : 데이터 액세스 계층에 사용, 예외 변환 기능 포함.
 
-- @Service
+- @Service : 서비스 계층에 사용, 비즈니스 로직 담당.
 
-- @Autowired
+- @Autowired : 의존성 주입을 자동으로 수행.
 
-- @Controller
+- @Controller : 프레젠테이션 계층에 사용, 웹 요청 처리.
 
-- @RequestMapping 
+- @RequestMapping : 특정 URL 패턴과 HTTP 메서드를 컨트롤러 메서드에 매핑.
 
-- @GetMapping
+- @GetMapping : HTTP GET 요청을 처리.
 
-- @PostMapping
+- @PostMapping : HTTP POST 요청을 처리.
