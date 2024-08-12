@@ -38,7 +38,7 @@ nullable 옵션 : null 값의 허용 여부 설정 (기본값 : true)
 
 unique 옵션 : 유니크 제약조건
 
-lengh 옵션 : 문자 길이 제약조건, String 타입에만 사용
+length 옵션 : 문자 길이 제약조건, String 타입에만 사용
 
 > @Entity 사용 시 주의 사항
 
