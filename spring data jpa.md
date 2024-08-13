@@ -1,5 +1,3 @@
-# Spring Data JPA
-
 ## JPA란??
 
 JPA란 **ORM (Object Relational Mapping) 객체 관계 매핑 기술의 표준**으로 인터페이스의 모음이다.
