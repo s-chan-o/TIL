@@ -1,6 +1,8 @@
 ## SOLID
 
-SOLID란 객체 지향 프로그래밍을 하면서 지켜야하는 5대 원칙으로 각각 SRP(단일 책임 원칙), OCP(개방-폐쇄 원칙), LSP(리스코프 치환 원칙), DIP(의존 역전 원칙), ISP(인터페이스 분리 원칙)의 앞글자를 따서 만들어졌다. 
+SOLID란 **객체 지향 프로그래밍**을 하면서 지켜야하는 5대 원칙으로 각각 SRP(단일 책임 원칙), OCP(개방-폐쇄 원칙), LSP(리스코프 치환 원칙), DIP(의존 역전 원칙), ISP(인터페이스 분리 원칙)의 앞글자를 따서 만들어졌다. 
+
+- 객체 지향 프로그래밍 : 객체 지향 프로그래밍 (Object-Oriented Programming, OOP)은 프로그래밍에서 필요한 데이터를 추상화 시켜 상태와 행위를 가진 객체로 만들고, 객체들간의 상호작용을 통해 로직을 구성하는 프로그래밍 방법이다.
 
 SOLID 객체 지향 원칙을 적용하면 코드를 확장하고 유지 보수 관리하기가 더 쉬워지고 불필요한 복잡성을 제거해 리펙토링에 소요되는 시간을 줄임으로써 프로젝트 개발의 생산성을 높일 수 있다.
 
@@ -20,6 +22,22 @@ SOLID 객체 지향 원칙을 적용하면 코드를 확장하고 유지 보수 
 
 SRP를 제대로 준수한다면, 변경이 필요할 때 수정할 대상이 명확해진다. 이런 장점은 시스템이 커질수록 극대화 된다. 시스템이 커지면서 서로 많은 의존성을 갖게 되는 상황이고, 변경요청이 들어오면 특정 클래스 하나만 수정하면 되기 때문이다.
 
+> 간단한 코드 예시
+
+    class Car {
+                                        // SRP 위반: Car 클래스가 두 가지 책임(start와 stop)을 가지고 있음
+                                        // 각각의 메서드가 개별적으로 관리되어야 할 책임을 담고 있음
+
+    public void start() {
+        // 자동차를 시작하는 로직
+    }
+
+    public void stop() {
+        // 자동차를 정지하는 로직
+    }
+}
+
+
 ---
 
 #### 개방 폐쇄 원칙 (OCP, Open-Closed Principle)
@@ -38,6 +56,31 @@ OCP는 추상화를 통해 구현이 가능하다. 자주 변화하는 기능들
 
 요구사항의 변경이나 추가사항이 발생하더라도, 기존 코드를 크게 수정할 필요 없이, 유연하게 기능을 확장할 수 있다.
 
+> 간단한 코드 예시
+
+        interface Shape {
+        double getArea();                       // OCP 적용: Shape 인터페이스는 확장에 열려 있음 (새로운 도형을 추가할 수 있음)
+    }
+
+    class Rectangle implements Shape {
+        private double width;
+        private double height;
+
+                                                // OCP 적용: Rectangle 클래스는 Shape 인터페이스를 구현하며, 변경 없이 확장이 가능
+        public double getArea() {
+            return width * height;              // 직사각형의 면적 계산
+        }
+    }
+
+    class Circle implements Shape {
+        private double radius;
+
+                                                // OCP 적용: Circle 클래스도 Shape 인터페이스를 구현하며, 변경 없이 확장이 가능
+        public double getArea() {
+            return Math.PI * radius * radius;   // 원의 면적 계산
+        }
+    }
+
 ---
 
 #### 리스코프 치환 원칙 (Liskov Substitution Principle, LSP)
@@ -52,6 +95,26 @@ OCP는 추상화를 통해 구현이 가능하다. 자주 변화하는 기능들
 
 - 올바른 상속이란, 부모 클래스의 인스턴스 대신, 자식 클래스의 인스턴스를 별 다른 변경 없이 사용해야 한다.
 
+> 간단한 코드 예시
+
+        interface Bird {
+        void fly();                                     // 모든 새가 구현해야 하는 비행 메서드 (LSP 위반 가능성 있음)
+    }
+
+    class Duck implements Bird {
+        public void fly() {
+            // 오리는 날 수 있으므로 비행 로직 구현
+        }
+    }
+
+    class Ostrich implements Bird {
+        public void fly() {
+            throw new UnsupportedOperationException();  // 타조는 날 수 없으므로 예외를 던짐 (LSP 위반)
+        }
+    }
+
+
+
 #### 인터페이스 분리 원칙 (ISP, Interface segregation principle)
 
     SRP가 클래스의 단일 책임을 명시했다면, ISP는 인터페이스의 단일 책임을 명시해 준다. ISP 원칙은 인터페이스를 사용하는 클라이언트를 기준으로 분리해서, 클라이언트의 목적과 용도에 적합한 인터페이스 만을 제공해 주는 것이 목표다.
@@ -59,6 +122,35 @@ OCP는 추상화를 통해 구현이 가능하다. 자주 변화하는 기능들
 - 만약 사용하지 않는 메서드에서 변경이 일어날 시, 문제가 발생할 수 있다.
 
 - 인터페이스를 분리함으로써, 클라이언트가 사용하지 않는 인터페이스에 변경이 발생하더라도 영향을 받지 않도록 만들어 줘야 한다.
+
+> 간단한 코드 예시
+
+                                            // Car 인터페이스: 자동차 관련 메서드
+    interface Car {
+        void drive();                       // 자동차 주행
+    }
+
+                                            // Airplane 인터페이스: 비행기 관련 메서드
+    interface Airplane {
+        void fly();                         // 비행기 비행
+    }
+
+                                            // FltyingCar 클래스: Car와 Airplane 인터페이스를 모두 구현
+                                            // 하나의 클래스가 두 가지 기능(Car와 Airplane)을 구현하고 있음
+
+    class FltyingCar implements Car, Airplane {
+    
+        @Override
+        public void drive() {
+            // 자동차 주행 구현
+        }
+
+        @Override
+        public void fly() {
+            // 비행기 비행 구현
+        }
+    }
+
 
 ---
 
@@ -76,6 +168,36 @@ OCP는 추상화를 통해 구현이 가능하다. 자주 변화하는 기능들
 
 저수준 모듈은 빈번하게 변경되고, 새로운 것이 추가될 때마다 고수준 모듈이 영향을 받기 쉬우므로, 의존관계를 역전시켜야 한다. 따라서 한 마디로 상위의 인터페이스 타입의 객체로 통신하라는 원칙입니다.
 
-**의존관계란??**
+> 의존관계란??
 
-    한 클래스가 어떤 기능을 수행하려고 할 때, 다른 클래스의 서비스가 필요한 경우를 말하는데, 대표적으로 A 클래스의 메서드에서 메개변수를 다른 B 클래스의 타입으로 받아 B 객체의 메서드를 사용할 때, A 클래스는 B 클래스와 의존한다고 한다.
+한 클래스가 어떤 기능을 수행하려고 할 때, 다른 클래스의 서비스가 필요한 경우를 말하는데, 대표적으로 A 클래스의 메서드에서 메개변수를 다른 B 클래스의 타입으로 받아 B 객체의 메서드를 사용할 때, A 클래스는 B 클래스와 의존한다고 한다.
+
+> 간단한 코드 예시
+
+                                            // Database 인터페이스: 데이터 저장 메서드 정의
+    interface Database {
+        void save(String data);             // 데이터 저장
+    }
+
+                                            // MySQL 클래스: Database를 구현하여 MySQL에 데이터 저장
+    class MySQL implements Database {
+        @Override
+        public void save(String data) {
+            // MySQL에 데이터 저장
+        }
+    }
+
+                                            // User 클래스: Database에 의존하고, 데이터 저장 기능을 제공
+    class User {
+        private Database database;          // Database 의존성
+
+        // 생성자에서 Database를 주입받음
+        public User(Database database) {
+            this.database = database;
+        }
+
+        // 데이터를 저장하는 메서드
+        public void saveData(String data) {
+            database.save(data);            // Database를 통해 데이터 저장
+        }
+    }
