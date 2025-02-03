@@ -22,7 +22,7 @@ public class OrderController{
 
 해당 필드로 구성된 생성자를 @RequiredArgsConstructor 가 자동으로 생성자 주입에 대한 코드를 생성해준다.
 
-@RequiredArgsConstructor 를 사용하지 않고 생성자 주입 코드를 작성한 예시
+**@RequiredArgsConstructor 를 사용하지 않고 생성자 주입 코드를 작성한 예시**
 
 ```java
 
