@@ -1,6 +1,6 @@
 ## JPA란??
 
-JPA란 **ORM (Object Relational Mapping) 객체 관계 매핑 기술의 표준**으로 인터페이스의 모음이다.
+JPA란 **ORM (Object Relational Mapping) 객체 관계 매핑 기술의 표준**으로 사용되는 인터페이스의 모음이다.
 
 실제로 동작하는 것이 아니기 때문에 구현체가 필요한데, JPA 표준을 구현한 구현체는 아래와 같이 Hibernate, EclipseLink, DataNucleus 가 있다. 
 
