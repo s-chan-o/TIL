@@ -1,4 +1,4 @@
-## QueryDSL
+## QueryDSL란
 
 QueryDSL은 SQL과 JPQL을 Java코드로 작성할 수 있게 도와주는 동적 쿼리 빌더이다. 
 
