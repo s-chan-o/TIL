@@ -1,4 +1,4 @@
-## @AllAgsConstructor
+## @AllArgsConstructor.
 
 @AllAgsConstructor 어노테이션은 클래스의 모든 필드 값을 파라미터로 받는 생성자를 자동으로 생성한다.
 
