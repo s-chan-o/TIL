@@ -1,6 +1,5 @@
 ## Redis
 
-
 > Redis란??
 
 - Redis는 Remote Dictionary Server의 약자로 키(Key) - 값(Value) 쌍의 해시 맵과 같은 구조를 가진 **비관계형(NoSQL) 데이터베이스 관리 시스템(DBMS)**이다.
